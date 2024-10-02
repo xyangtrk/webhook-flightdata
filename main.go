@@ -11,6 +11,7 @@ import (
 )
 
 func flightAlertHandler(w http.ResponseWriter, r *http.Request) {
+  log.Println("==== Received Request ====")
   var alert map[string]interface{}
 
   body, err := io.ReadAll(r.Body)
@@ -19,6 +20,7 @@ func flightAlertHandler(w http.ResponseWriter, r *http.Request) {
     http.Error(w, err.Error(), http.StatusBadRequest)
     return
   }
+  log.Println("==== Request method is POST ====")
 
   err = json.Unmarshal(body, &alert)
   if err != nil {
@@ -26,6 +28,7 @@ func flightAlertHandler(w http.ResponseWriter, r *http.Request) {
     return
   }
 
+  log.Printf("Request body received: %s\n", string(body))
   // Add a timestamp field to the alert
 	alert["receivedAt"] = time.Now().Format(time.RFC3339)
 
@@ -37,6 +40,8 @@ func flightAlertHandler(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	defer file.Close()
+
+  log.Println("File opened successfully for appending")
 
   // Convert the alert to pretty-printed JSON
 	alertBytes, err := json.MarshalIndent(alert, "", "  ")
@@ -52,7 +57,7 @@ func flightAlertHandler(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Error writing alert to file", http.StatusInternalServerError)
 		return
 	}
-
+  log.Println("Alert successfully written to file")
 	// Log the alert to the console (optional)
 	log.Printf("Received alert: %v\n", string(alertBytes))
 
@@ -61,6 +66,7 @@ func flightAlertHandler(w http.ResponseWriter, r *http.Request) {
 
   w.WriteHeader(http.StatusOK)
   fmt.Fprintf(w, "Received alert: %v\n", alert)
+  log.Println("---- Request processed successfully ----")
 }
 
 func main() {

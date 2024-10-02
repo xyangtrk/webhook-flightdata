@@ -1,0 +1,143 @@
+{
+  "api": "https://developer.flightstats.com/api-docs/alerts/v1",
+  "curl": "curl -v  -X GET \"https://api.flightstats.com/flex/alerts/rest/v1/json/create/DL/3057/from/ATL/departing/2024/10/2?appId=11cc3d06&appKey=c354f9c474aedef2b37fa59aae149f38&type=JSON&deliverTo=https%3A%2F%2Fa7b2-12-94-93-106.ngrok-free.app%2Fflight-alert\""
+}
+{
+  "request": {
+    "airlineCode": {
+      "fsCode": "DL",
+      "requestedCode": "DL"
+    },
+    "flightNumber": {
+      "requested": "3057",
+      "interpreted": "3057"
+    },
+    "name": {
+      "interpreted": "Default"
+    },
+    "type": {
+      "requested": "JSON",
+      "interpreted": "JSON"
+    },
+    "deliverTo": {
+      "requested": "https://a7b2-12-94-93-106.ngrok-free.app/flight-alert",
+      "interpreted": "https://a7b2-12-94-93-106.ngrok-free.app/flight-alert"
+    },
+    "events": [
+      {
+        "requested": "all"
+      }
+    ],
+    "nameValues": [],
+    "codeType": {
+      "interpreted": "FS"
+    },
+    "url": "https://api.flightstats.com/flex/alerts/rest/v1/json/create/DL/3057/from/ATL/departing/2024/10/2?type=JSON&deliverTo=https%3A%2F%2Fa7b2-12-94-93-106.ngrok-free.app%2Fflight-alert",
+    "airport": {
+      "fsCode": "ATL",
+      "requestedCode": "ATL"
+    },
+    "date": {
+      "year": "2024",
+      "month": "10",
+      "day": "2",
+      "interpreted": "2024-10-02"
+    },
+    "extendedOptions": {
+      "requested": "",
+      "interpreted": ""
+    }
+  },
+  "rule": {
+    "id": "1934924700",
+    "carrierFsCode": "DL",
+    "flightNumber": "3057",
+    "departureAirportFsCode": "ATL",
+    "arrivalAirportFsCode": "AVL",
+    "departure": "2024-10-02T11:08:00.000",
+    "arrival": "2024-10-02T12:05:00.000",
+    "name": "Default",
+    "ruleEvents": [
+      {
+        "type": "ALL_CHANGES"
+      }
+    ],
+    "nameValues": [],
+    "delivery": {
+      "format": "JSON",
+      "destination": "https://a7b2-12-94-93-106.ngrok-free.app/flight-alert"
+    }
+  },
+  "alertCapabilities": {
+    "baggage": true,
+    "departureGateChange": true,
+    "arrivalGateChange": true,
+    "gateDeparture": true,
+    "gateArrival": true,
+    "runwayDeparture": true,
+    "runwayArrival": true
+  },
+  "appendix": {
+    "airlines": [
+      {
+        "fs": "DL",
+        "iata": "DL",
+        "icao": "DAL",
+        "name": "Delta Air Lines",
+        "active": true
+      }
+    ],
+    "airports": [
+      {
+        "fs": "AVL",
+        "iata": "AVL",
+        "icao": "KAVL",
+        "faa": "AVL",
+        "name": "Asheville Regional Airport",
+        "street1": "61 Terminal Drive",
+        "city": "Asheville",
+        "cityCode": "AVL",
+        "stateCode": "NC",
+        "postalCode": "28732",
+        "countryCode": "US",
+        "countryName": "United States",
+        "regionName": "North America",
+        "timeZoneRegionName": "America/New_York",
+        "weatherZone": "",
+        "localTime": "2024-10-02T10:30:55.345",
+        "utcOffsetHours": -4,
+        "latitude": 35.43508,
+        "longitude": -82.537314,
+        "elevationFeet": 2165,
+        "classification": 3,
+        "active": true
+      },
+      {
+        "fs": "ATL",
+        "iata": "ATL",
+        "icao": "KATL",
+        "faa": "ATL",
+        "name": "Atlanta Hartsfield-Jackson International Airport",
+        "street1": "6000 N Terminal Parkway",
+        "street2": "",
+        "city": "Atlanta",
+        "cityCode": "ATL",
+        "stateCode": "GA",
+        "postalCode": "30320",
+        "countryCode": "US",
+        "countryName": "United States",
+        "regionName": "North America",
+        "timeZoneRegionName": "America/New_York",
+        "weatherZone": "GAZ044",
+        "localTime": "2024-10-02T10:30:55.345",
+        "utcOffsetHours": -4,
+        "latitude": 33.640067,
+        "longitude": -84.44403,
+        "elevationFeet": 1026,
+        "classification": 1,
+        "active": true
+      }
+    ],
+    "equipments": []
+  }
+}
